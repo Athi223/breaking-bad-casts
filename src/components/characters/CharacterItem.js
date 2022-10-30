@@ -1,11 +1,16 @@
 import React from "react";
 
 const CharacterItem = ({ item }) => {
+  const fallbackImage = e => {
+    e.target.onerror = null
+    e.target.src = `/fallback/${item.name}.jpg`
+  }
+
   return (
     <div className="card">
       <div className="card-inner">
         <div className="card-front">
-          <img src={item.img} alt="" />
+          <img src={item.img} onError={fallbackImage} alt="" />
         </div>
         <div className="card-back">
           <h1>{item.name}</h1>
