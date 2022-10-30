@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/ui/Header";
-import CharacteGrid from './components/characters/CharacterGrid'
+import CharacterGrid from './components/characters/CharacterGrid'
 import Search from './components/ui/Search'
 import "./App.css";
 
@@ -29,7 +29,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Search getQuery={(q) => setQuery(q)}/>
-      <CharacteGrid isLoading={isLoading} items={items} />
+      <CharacterGrid isLoading={isLoading} items={items} />
     </div>
   );
 };
